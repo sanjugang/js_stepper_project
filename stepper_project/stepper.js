@@ -153,12 +153,19 @@ button2.addEventListener('click',()=>{
 function changeColor(count){
     let divs=container.querySelectorAll("div");
     for(let i=0;i<divs.length;i++){
-        if(i<count){
+        if(i<count-1){
             divs[i].style.backgroundColor="green";
-            // divs[i].append(img1);
+            if(i%2==0){
+                divs[i].innerText="✔";
+            }
         }
+        
         else{
             divs[i].style.backgroundColor="white";
+            divs[i].innerText="";
+            if(i%2==0){
+            divs[i].innerText=Math.floor(`${(i/2)+1}`)
+            }
         }
     }
 
